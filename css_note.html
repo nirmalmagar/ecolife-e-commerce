@@ -1,0 +1,537 @@
+<!-- (scrolling part):
+//to scroll smoothly
+
+.smooth.scroll-on{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background-color: white;
+}
+
+
+---------------------------------------------------------------------------------------------------------
+(vendor prefixes in css:)
+//when animation or hover effect will not support on different browser then we use below css
+-webkit- :safari,google chrome,android, iOS
+-ms-: internet Explorer
+-o-: opera
+-moz-: Firefox
+eg:
+.box{
+border: 2px solid red
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+-moz-border-radius: 4px;
+}
+-----------------------------------------------------------------------------------------------------------
+(pseudo element):
+//when we want to add text or any thing before and after the element then we use below element
+.element::before { //add in front
+content: ""; // we have to write content to use this element
+}
+.element::after { //add in back
+content: ""; // we have to write content to use this element
+}
+
+
+--------------------------------------------------------------------------------------------------------------
+1:40 100%
+DISPLAY :
+
+display: inline // it will display text in one line and also we cannot define the width and height it will automatically
+take as it is
+// text will be in row form
+display: block // automatically our code will be in block form , it will break text in anotherline if we use in any tag;
+display: none // it will hide the display on screen;
+display: inline-block // it will display in same line also we can define hight and width on it
+// in block the text will be in side the box only;
+or,
+visibility: hidden // both are same
+
+
+CSS POSITION:
+[NOTE: we can use top, right, bottom, left when we use position element ]
+
+position: absolute; // it will change according to whole html body;
+position: relative; // it will change according to parent box;
+position: fixed; // it will sticky in the display when we scroll up or right left, it doesn't change the position ;
+position: sticky // it will sticky up when we use top;
+
+
+
+BACKGROUND IMAGES:
+img{
+opacity: 0.5; // bright of image 0.5 is 50%
+}
+p{
+background-color: blue;
+background-image: url("image link");
+background-position: right top; // it will attach bg position
+background-repeat: no-repeat; // it will not repeat the bg color
+background-attachment: fixed,scroll; // while scrolling page picture will not scroll
+OR,
+background: purple url("img_tree.png") no-repeat right top;
+margin-right: 200px;
+}
+-------------------------------------------------------------------------------------------------
+
+Grid:
+display: grid;
+row-gap: 50px; //give gap in row
+column-gap: 50px; // give gap in column
+gap: 50px 100px; //row gap and column gap
+grid-template-columns: auto auto auto; //it will automaticaly make 3 colums with equal width
+grid-template-columns: 300px 400px 200px;
+grid-template-rows: 80px 200px; // make 2 rows with 80px 1st and 200px 2nd
+
+justify-content: space-evenly;
+
+
+"item1" start on column 1 and end before column 5:
+.item1 {
+grid-column: 1 / 5; //take 4 container column
+grid-column: 1 / 5; //take 4 container row
+}
+
+
+
+use in grid items:
+.container{
+display: grid;
+grid-template-columns: auto auto auto;
+gap: 10px;
+}
+
+//take 3 column by single box
+.items{
+grid-column-start: 1;
+grid-column-end: 3;
+}
+
+
+
+-------------------------------------------------------------------------------------------------
+FLEX BOX:
+
+display: flex; // it will put all the element in row form;
+flex-direction: column; or, row;
+: row-reverse //it will put all element from right side to left side
+: column-reverse // it will put all elements from bottom to top
+flex-wrap: nowrap //default value
+: wrap // it will display overflow element into next line
+: wrap-reverse // it will wrap into reverse form
+
+justify-content will work on row form only
+justify-content: flex-end; // flex start by end side ,in row side;
+: flex-start; //default value
+: center;
+: space-around; // put space in each box at the end and start box also
+: space-between; // put space in between boxes only not at end and start box
+
+changes in column only:
+align-items: flex-end // box will be at the end of column for each row;
+: flex-start; // box in first column
+: baseline; // bigger size box will attach in top smaller will not
+: center; // box will be at the center;
+
+align-content: flex-start; // it will put all the row element in first column position
+: flex-end;
+: center;
+: space-around;
+: space-between;
+flex-wrap: wrap; //it will put overflow element in next line
+
+order: 1; //to make container in order form
+order: 2;
+
+flex-basis: 200px; //to change in one single flex div
+align-self: center;
+align-self: flex-start; //only one container will be in center
+
+flex-grow: 1
+flex-grow: 8 // it will take 8 container space
+
+
+[NOTE: below property will work only when flex-wrap is used]
+align-center:
+gap: 1rem; // give rap on all the boxes;
+padding-box: helps to occupi all the background color except border;
+
+
+
+--------------------------------------------------------------------------------------------------
+
+BORDER:
+
+p{
+{NOTE: outline and border are similar type}
+
+border: 1px solid blue;
+outline-style: 2px;
+outline-offset: 3px; // this will make another outline on border line with 3px gap
+border-style: solid;
+border-style: dotted solid
+border-width: 2px; // border thiknes
+border-color: red pink blue yellow; // top=red, right=p, buttom=b, l = y
+or, #ff0000 or, rgb(255,0,00 // red color
+border-color: red blue; // top and bottom will be red and L, R will be blue
+border-radius: 2px; // help to curve side pointed area
+
+combind css: (shorthand)
+border-top: 3px dotted red; // top will be 3px and dotted with red color
+
+---------------------------------------------------------------------------
+MARGIN AND PADDING:
+
+margin: 2px; // it will give space to whole body
+margin: 0 2px 0 4px;
+margin-top: 2px;
+width: 300px; // use to display word in a length
+
+padding: 2px // it will gave space to text only
+width: 300px
+or,
+width: 25% // it will cover25% of screen
+height: 200px
+}
+-------------------------------------------------------------------------------
+TEXT:
+
+text-align: center , right , left
+text-align: justify // it will automatically correct the gaping on text
+---------------------------------------------------------------------------------------
+LIST:
+
+ul.a {
+list-style-type: circle;
+}
+
+ul.b {
+list-style-type: square;
+}
+
+ol.c {
+list-style-type: upper-roman;
+}
+
+ol.d {
+list-style-type: lower-alpha;
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+ul {
+list-style-image: url('sqpurple.gif'); // insert image on list iterm
+}
+------------------------------------------------------------------------------------------
+CSS LINKS:
+
+<span style="cursor: auto">auto</span><br>
+<span style="cursor: crosshair">crosshair</span><br>
+<span style="cursor: default">default</span><br>
+<span style="cursor: e-resize">e-resize</span><br>
+<span style="cursor: help">help</span><br>
+<span style="cursor: move">move</span><br>
+<span style="cursor: n-resize">n-resize</span><br>
+<span style="cursor: ne-resize">ne-resize</span><br>
+<span style="cursor: nw-resize">nw-resize</span><br>
+<span style="cursor: pointer">pointer</span><br>
+<span style="cursor: progress">progress</span><br>
+<span style="cursor: s-resize">s-resize</span><br>
+<span style="cursor: se-resize">se-resize</span><br>
+<span style="cursor: sw-resize">sw-resize</span><br>
+<span style="cursor: text">text</span><br>
+<span style="cursor: w-resize">w-resize</span><br>
+<span style="cursor: wait">wait</span>
+
+------------------------------------------------------------------------------------------
+
+
+
+
+
+
+CSS ADVANCE:
+
+
+
+PSEUDO ELEMENT:
+
+::before{
+content: "hello guy's"; // we must write content while using before and after
+color: red;
+background: black;
+}
+::after
+:: first-letter // to change the first paragraph first letter only
+:: first-line // to change the first line paragraph
+:: selection // it wil help to change the background color or text color while selecting the text
+::
+
+
+CSS ROUND CORNORS:
+border-radius: 15px / 50px //Elliptical border - border-radius: 50px / 15px:
+upper and lower part will be 50px and left and right part will be 15px
+border-radius: 50%
+border-radius: 15px 10px 20px 25px; // change in 4 cornor side on box
+box-shadow:
+CSS COLOR:
+background-color:rgb(255,0,0);opacity:0.6;} // opacity is the color brightness with included text color also and it's
+reange is form 0.0 to 1.0
+background-color: transparent // it will transparent background:
+{
+color: red;
+border: 2px solid currentcolor; // it will put same color in border
+box-shadow: 0px 0px 15px currentcolor // it will shadow border with currentcolor
+box-shadow: 2px 1px red // it will shaded in right and top only;
+box-shadow: 0 0 2px 1px red // it will display in all 4 side;
+border: inherit // it will add eg:|nirmal| in text;
+}
+
+COLOR GRADIENTS:
+[NOTE: color will display on background-image only ]
+LINEAR-GRADIENT:
+background-image: linear-gradient(red,yellow) // it will display top to buttom;
+background-image: linear-gradient(to right, yellow, red) // display from left to right
+background-image: linear-gradient(to bottom right, red, yellow) // it will display diagonally
+background-image: linear-gradient(180deg, red ,blue) // display color in 180 direction
+background-image: linear-gradient(to right,yellow,blue,green.red.purple) //to display rainbow color
+background-image: repeating-liner-gradient(180deg,red, yellow, green) // it will repeat
+
+RADIAL-GRADIENT:
+background-image: radial-gradient(red,blue, green) //display in ellips form
+background-image: radial-gradient(circle, red 10%, blue 30% , green 60%) // display in circle form with color size
+background-image: repeating-radial-gradient( red, yellow, black); //
+
+CONIC-GRADIENT:
+background-image: conic-gradient(red , blue, pink, black) // display color in box form in square form
+background-image: repeating-conic-gradient(red 10%, yellow 20%);
+------------------------------------------------------------------------------------------------------------------------------------------
+CSS SHADOWS EFFECT:
+[NOTE: we should add at least 2 px to display it ]
+text-shadow: 2px 20px 3px 4px red ; // 20px is llly,as padding bottom and 3px is blur quality 4px is for whole 4 side i
+guess
+text-shadow: 2px 20px 3px red ,2px 20px 3px pink ,2px 20px 3px blue // can add more color in one text
+
+BOX SHADOW:
+box-shadow: 2px 3px 4px 5px ; // 2 is for right side and 3 for buttom 4 for blur and 5 for shadow size
+box-shadow: 2px 20px 3px red inset // inset is for left and top side of border only
+BORDER IMAGE:
+border-image: url(border.png) 30 round; // create border by image;
+--------------------------------------------------------------------------------------------------------------------------
+CSS TEXT-EFFECT:
+white-space: nowrap; // it doesn't break the line to show unseen text inside the border
+border: 1px solid #000000;
+overflow: hidden; // it will hide the overflow text from outside of the border
+overflow: visible; // it will visible the overflow text outside the border.
+text-overflow: clip; // it will show text which can place inside the border only , it doesn't show the overflow text
+text-overflow: ellipsis // (the....) the text which cann't be place inside the border that text will be shown by ....
+writing-mode: horizontal-tb; // write text in x-axis
+writing-mode: vertical-rl; // write text in y-axis
+----------------------------------------------------------------------------
+TRANSFORM:2D and 3D:
+2D-Transform:
+
+transform: translate(50px,100px); // same as padding 50 is x(left) and 100 is from y-axis(top), it will include its body
+px in 50px
+transform: rotate(20deg); // rotate 20deg from 90deg from right side;
+transform: rotate(-20deg); // rotate 2odeg by left side ;
+transform: rotate(0.5turn); // it will rotate half only;
+transform: rotate(-2turn); // it will rotate 2 times in opposite direction;
+transform: scale(1.5); // top, right (whole body will be 1.5cm )
+transform: scale(3,4); // length or width is 3cm and height will be 4cm
+transform: scaleX(2); // 2 times bigger width than ist's orginal size
+transform: scaleY(3); // 3 times bigger height
+transform: skewy(45deg) // draw diagonally on both side ;
+transform: skewy(20deg); // draw 20deg from y-axis
+transform: skewx(20deg); // draw 20deg from x-axis
+transform: matrix(1,2,3,4,5,6); // matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+3D-Transform:
+
+[Its output will be in mirror form which means opposite letter]
+transform: roteteX(60deg)
+transform: roteteY(90deg)
+transform: roteteZ(180deg)
+transform: rotate3d(1,2,3,50deg); // 1 is x , 2 is y, 3 is z-axis with 50deg rotation
+------------------------------------------------------------------------------------------------
+
+TRANSITION:
+[NOTE: its helps on timing methods]
+
+div {
+width: 100px;
+height: 100px;
+background: red;
+transition: width 2s, height 4s; // it will move an object for 2s in width and 4 in height
+transition-delay: 1s; // it will delay to display for 1s
+}
+div:hover {
+width: 300px;
+height: 300px;
+}
+transition-timing-function: ease - specifies a transition effect with a slow start, then fast, then end slowly (this is
+default)
+transition-timing-function: linear - specifies a transition effect with the same speed from start to end
+transition-timing-function: ease-in - specifies a transition effect with a slow start
+transition-timing-function: ease-out - specifies a transition effect with a slow end
+transition-timing-function: ease-in-out - specifies a transition effect with a slow start and end
+transition-timing-function: cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+div {
+width: 100px;
+height: 100px;
+background: red;
+transition: width 2s, height 2s, transform 2s; // output: will come by rotating 180deg for 2s
+}
+div:hover {
+width: 300px;
+height: 300px;
+transform: rotate(180deg); // it will display by rotate the whole body by 180 deg
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+div{
+width: 60px;
+height: 60px;
+transition-property: width; // property is width only so it will work on width, not in height, height will change
+automatically fast when we hover it;
+transition-duration: 5s; // it will run upto 5sec;
+transition-timing-function: linear; // linear helps to run in same speed from first to last position;
+transition-delay: 2s; // it will delay 2sec to run;
+
+} div.hover{
+width:100px;
+}
+shorthand process: transition: width 2s linear 1s; //we can add both in one
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS ANIMATION:
+div{
+height: 50px;
+width: 50px;
+background-color: red;
+animation-name: example; // name should be written to add element on it
+animation-duration: 3s;
+}
+@keyframes example{
+from{background-color: red;} // change color in duration of 3s from red to yellow
+to{background-color: yellow;}
+}
+llly,
+@keyframes example{
+0% {background-color: red;} // it will divide 4 color for 1s
+25% {background-color: yellow;}
+50% {background-color: blue;}
+100% {background-color: green;}
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+position: relative; // while using position we can use left and top
+animation-delay: 2s; // after 2s animation will work
+animation-delay: -2s // -2 will play 2s duration but don't show it will similar as invisible for 2s also, automatically
+run, time will not delay;
+animation-name: example;
+animation-duration: 4s;
+animation-iteration-count: 3 // it will repeat 3 time same process;
+animation-iteration-count: infinite // it will repeat process with out stopping
+animation-direction: reverse; // it will work backward;
+: alternate // it will work normal and then reverse , work 2 times
+: alternate-reverse // it will work reverse and then normal, works 2 time
+: normal // normal position
+}
+@keyframes example {
+[NOTE: it will work when position is relative]
+
+0% {background-color:red; left:0px; top:0px;} //orginal position
+25% {background-color:yellow; left:200px; top:0px;} // shift to right side
+50% {background-color:blue; left:200px; top:200px;} // shift to right down
+75% {background-color:green; left:0px; top:200px;} // shift to left down
+100% {background-color:red; left:0px; top:0px;} // shift to orginal position
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+width: 100px;
+height: 50px;
+background-color: red;
+font-weight: bold;
+position: relative;
+animation: mymove 5s infinite; // we can add all tag in one line (shorthand) mymoves is animation-name
+// 5s is duration and infinite is iteration-count;
+}
+#div1 {animation-timing-function: linear;- specifies a transition effect with a slow start, then fast, then end slowly
+(this is default)
+#div2 {animation-timing-function: linear - specifies a transition effect with the same speed from start to end
+#div2 {animation-timing-function: ease-in - specifies a transition effect with a slow start
+#div3 {animation-timing-function: ease-out - specifies a transition effect with a slow end
+#div4 {animation-timing-function: ease-in-out - specifies a transition effect with a slow start and end
+#div5 {animation-timing-function: cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+}
+@keyframes mymove { OUTPUT:
+from {left: 0px;} all 5 div object will move from left to right with different timing-function
+to {left: 300px;}
+}
+animation: myfirst 5s linear 2s infinite alternate; // myfirst is name , 5s is duration, linear is same speed time
+duration,
+2s is delay and infinite is iteration-count, alternate is direction;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+div {
+width: 100px;
+height: 100px;
+background: red;
+position: relative;
+animation-name: example;
+animation-duration: 3s;
+animation-delay: 2s;
+animation-fill-mode: both; // it will move from 1st position to left bottom also
+1st color is yellow and change to blue in bottom
+animation-fill-mode: backward // backward is yellow so red will change to yellow in first and in bottom it will be red
+animation-fill-mode: forward // change red to blue in bottom
+}
+
+@keyframes example {
+from {top: 0px; background-color: yellow;} // this is backward
+to {top: 200px; background-color: blue;} // this is forward
+}
+-----------------------------------------------------------------------------------
+
+TOOLTIP:
+
+tooltip = hover me llly, tooltiptext == this is tooltiptext
+
+.tooltip {
+display: inline-block // it will display all text in one row
+}
+
+.tooltiptext {
+visibility: hidden // it will hide the visibility
+background-color: red;
+text-align: center;
+color: white;
+position: realtive;
+}
+.tooltip:hover tooltiptext { //when we hover the tooltip it will show the tooltiptext;
+visibility: visible;
+}
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Learning CSS</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="tooltip">Hello Guy'
+        <span class="tooltiptext">Ladies whatup!</span>
+
+    </div>
+</body>
+
+</html> -->
