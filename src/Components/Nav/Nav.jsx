@@ -10,6 +10,7 @@ const Nav = () => {
     const [searchInput, setSearchInput] = useState(false);  //searchBtn statee
     const [menuIcon, setMenuIcon] = useState(true);     //responsive menu state
 
+    //Mouse down
     const MenuRef = useRef();
 
     useEffect(() => {
@@ -24,8 +25,10 @@ const Nav = () => {
             document.removeEventListener('mousedown', handler);
         }
     })
+
     return (
         <>
+        <div >
             <div className='flex mx-5 mt-3 mb-2 justify-between font-robota font-medium text-sm text-gray-500'>
                 <div className='lg:hidden pt-2'>
                     {/* <button onClick={() => setMenuIcon(!menuIcon)}>{menuIcon ? <MenuIcon /> : <CloseIcon />}</button> */}
@@ -42,7 +45,8 @@ const Nav = () => {
                        { menuIcon ? null : <li className=' bg-black lg:bg-black text-white  pl-10 py-2' onClick={()=>setMenuIcon(true)}><button className='lg:mr-12'
                          >Close</button> <ArrowBackIcon className='ml-48'/></li>}
                         <li className='lg:mr-12 pl-10 lg:pt-0 pt-2'><NavLink className='hover:text-textColor' to="/shop">Shop</NavLink></li>
-                        <li className='lg:mr-12 lg:my-0 pl-10 my-2 lg:border-none py-2 lg:py-0 border-y-2'><NavLink className=' peer hover:text-textColor' to="/features">Features</NavLink>
+                        <li className='lg:mr-12 lg:my-0 pl-10 my-2 lg:border-none py-2 lg:py-0 border-y-2'>
+                            <NavLink className='peer hover:text-textColor' to="/features">Features</NavLink>
                             {/* <ul className='absolute z-10  hidden peer-hover:block px-5 py-3 mt-4  shadow-xl shadow-gray-300 font-normal bg-white'>
                                 <tr className=''>
                                 <th className='pb-2 pr-20'>Catalog Product</th>
@@ -98,6 +102,7 @@ const Nav = () => {
                     }
                     <AddShoppingCartIcon />
                 </div>
+            </div>
             </div>
         </>
     )

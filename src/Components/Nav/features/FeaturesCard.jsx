@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import StarIcon from '@mui/icons-material/Star';
-import { API } from './API';
+import { API } from '../Home/Cards/API'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,10 +7,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Cards = () => {
     const [mouseOver, setMouseOver] = useState(false);  //mouse hover display
-    const [apiData,setApiData] = useState(8);   // display api data
+    const [apiData,setApiData] = useState(10);   // display api data
 
     const LoadMore =()=>{
-    setApiData(apiData + 4);
+    setApiData(apiData + 5);
     }
 
     const slice = API.slice(0,apiData);
@@ -35,17 +34,11 @@ const Cards = () => {
         alert("AddtoCart");
     }
     return (
-        <div>
-            <div className='text-center mb-[3%]'>
-                <h1 className='font-robota font-semibold text-lg mb-1'>FEATURED PRODUCTS</h1>
-                <p className='font-kalam text-gray-500 mb-2'>The most prominent product in the store, which was bought with the highest number</p>
-                <div className='flex ml-[37%]'>
-                    <div className='h-[2px] w-[20%] bg-slate-600'></div>
-                    <span className='text-gray-500 -mt-3'><StarIcon /></span>
-                    <div className='h-[2px] w-[20%] bg-slate-600'></div>
-                </div>
+        <div className='mx-[7%] lg:mx-[10%]'>
+            <div className=' my-10'>
+                <h1 className='text-xl font-semibold'>You Might Also Like</h1>
             </div>
-            <div className='relative grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 cols-1 gap-5 mx-[7%] lg:mx-[10%]'>
+            <div className='relative grid lg:grid-cols-5 xm:grid-cols-2 md:grid-cols-4 sm:grid-cols-3 cols-1 gap-5'>
                 {
                     slice.map((value, index) => {
                         return (

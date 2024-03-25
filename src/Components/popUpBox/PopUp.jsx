@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PopupImg from '../../assets/images/popup/fur-popup.jpg';
-import CloseIcon from '@mui/icons-material/Close';
+// import CloseIcon from '@mui/icons-material/Close';
 
 const PopUp = () => {
   const [popup, setPopup] = useState(false);
@@ -10,8 +10,8 @@ const PopUp = () => {
       setPopup(true);
     }, 1000)
   }, []);
+  
   return (
-
     <div className={popup ? "hidden lg:contents" : 'hidden'}>
       <div className=' fixed top-0 z-10 bg-black w-full h-full opacity-60'></div>
       <div className=' fixed top-[17%] left-[24%] z-10' >
@@ -40,7 +40,6 @@ const PopUp = () => {
         </div>
       </div>
     </div>
-
   )
 }
 
