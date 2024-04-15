@@ -9,6 +9,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import ChooseUs from './ChooseUs';
+import CountNumber from './CountNumber';
 
 const About = () => {
   return (<>
@@ -43,6 +44,7 @@ const About = () => {
       </div>
     </div>
     <ChooseUs />
+    <CountNumber/>
   </>
   )
 }

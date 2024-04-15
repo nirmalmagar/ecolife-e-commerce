@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import bgImage from '../../../assets/images/nav/fur-bg-about.jpg'
 import featuresImgOne from '../../../assets/images/features/form-armchair-black-1.jpg';
@@ -20,6 +20,24 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
 const Features = () => {
+    const [increaseNum, setIncreaseNum] = useState(1);  //increasing numbers of items button
+    // increasing numbers of items button
+    const IncNumItems = () => {
+        setIncreaseNum(increaseNum + 1);
+    }
+    const DecNumItems = () => {
+        if (increaseNum < 1) {
+
+        }
+        else {
+            setIncreaseNum(increaseNum - 1);
+        }
+    }
+
+    // add to cart alert
+    const addToCart = () => {
+        alert('added successfully');
+    }
     return (
         <div className='font-robota'>
             <div className='h-36 w-screen bg-right bg-cover flex flex-col justify-center items-center' style={{ backgroundImage: `url(${bgImage})` }}>
@@ -36,6 +54,7 @@ const Features = () => {
             <div className='grid lg:grid-cols-2 grid-cols-1 w-[90%] md:w-[75%] lg:gap-y-0 gap-y-10 gap-x-5 lg:w-[95%] xl:w-[90%] 2xl:w-[80%] mx-auto'>
                 <div>
                     <img src={featuresImg} alt="" />
+                    {/* <div className='bg-blue-400 h-[70%] w-full'></div> */}
                     <div className='flex w-1/5 gap-x-2 border-textColor-2 mx-[8%] mt-4 '>
                         <img className='border-2' src={featuresImg} alt="" />
                         <img className='border-2' src={featuresImgOne} alt="" />
@@ -74,22 +93,25 @@ const Features = () => {
                         <br />
 
                         <button className='w-full bg-black text-white py-3 mt-8 hover:bg-textColor'><ShoppingCartCheckoutIcon className='mr-2' />Buy Now</button> */}
-                        <div className='flex sm:flex-row flex-col'>
+                        <div className='flex '>
                             <div className='w-[30%]'>
-                                <div className='flex '>
-                                    <button className='px-2 py-1 border-2'><RemoveIcon fontSize='small' /></button>
-                                    <button className='xl:px-8 lg:px-5 xm:px-5 px-8 font-bold py-1 border-y-2'>1</button>
-                                    <button className='px-2 py-1 border-2'><AddIcon fontSize='small' /></button>
+                                <div className='flex  '>
+                                    <button onClick={DecNumItems} className='px-2 py-1 border-2'><RemoveIcon fontSize='small' /></button>
+                                    <button className='xl:px-8 lg:px-5 xm:px-5 px-8 font-bold py-1 border-y-2'>{increaseNum}</button>
+                                    <button onClick={IncNumItems} className='px-2 py-1 border-2'><AddIcon fontSize='small' /></button>
                                 </div>
                             </div>
-                            <div className='w-[50%] border-black border-2 duration-700 hover:border-none hover:bg-textColor hover:text-white'>
-                                <button className=' py-1 w-[100%] '>Add To Cart</button>
+                            <div className='w-[50%] sm:block hidden border-black border-2 duration-700 hover:border-none hover:bg-textColor hover:text-white'>
+                                <button onClick={addToCart} className=' py-1 w-[100%] '>Add To Cart</button>
                             </div>
                             <div className='sm:w-[20%] flex pl-6 sm:mx-0 mx-auto'>
                                 <button className='border-y-2 border-l-2 py-1 px-2'><CompareArrowsIcon /></button>
                                 <button className='border-2 py-1 px-2'><FavoriteBorderIcon /></button>
                             </div>
                         </div>
+                        {/* <div className='w-[50%] mx-auto sm:hidden  mt-8 border-black border-2 duration-700 hover:border-none hover:bg-textColor hover:text-white'>
+                                <button onClick={addToCart} className=' py-1 w-[100%] '>Add To Cart</button>
+                            </div> */}
                         <button className='w-full bg-black text-white py-3 mt-8 duration-700 hover:bg-textColor '><ShoppingCartCheckoutIcon className='mr-2' />Buy Now</button>
                     </div>
                     <hr />
@@ -138,7 +160,7 @@ const Features = () => {
                     </div>
                 </div>
             </div>
-        <FeaturesCard/>
+            <FeaturesCard />
         </div>
     )
 }
