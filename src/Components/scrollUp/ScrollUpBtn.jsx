@@ -22,7 +22,7 @@ const ScrollUpBtn = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", ListenToScroll);
-    return () => window.addEventListener("scroll", ListenToScroll);
+    return () => window.removeEventListener("scroll", ListenToScroll);
   }, []);
   return (
     <>
