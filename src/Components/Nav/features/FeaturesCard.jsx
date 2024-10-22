@@ -16,10 +16,10 @@ const Cards = () => {
     const slice = API.slice(0,apiData);
 
     const displayMouseOver = () => {
-        setMouseOver(true);
+        // setMouseOver(true);
     }
     const displayMouseOut = () => {
-        setMouseOver(false);
+        // setMouseOver(false);
     }
     const AddLike = () => {
         alert("AddLike");
@@ -52,7 +52,7 @@ const Cards = () => {
                                     <p className="cursor-pointer font-semibold text-sm">{value.price}</p>
                                 
 
-                                {mouseOver ? (<div className="absolute top-56 py-2 delay-200 left-[9%] drop-shadow-xl border-none bg-white border-2 flex rounded-full ">
+                                {/* {mouseOver ? (<div className="absolute top-56 py-2 delay-200 left-[9%] drop-shadow-xl border-none bg-white border-2 flex rounded-full ">
                                     <FavoriteBorderIcon sx={{ fontSize: "25px" }} onClick={AddLike} className='hover:text-textColor text-gray-600 cursor-pointer mx-4' />
                                     <div className='w-[1px] h-6 bg-gray-400'></div>
                                     <CompareArrowsIcon sx={{ fontSize: "25px" }} onClick={AddCompare} className='hover:text-textColor text-gray-600 cursor-pointer mx-4' />
@@ -60,7 +60,7 @@ const Cards = () => {
                                     <SearchIcon sx={{ fontSize: "25px" }} onClick={AddSearch} className='hover:text-textColor text-gray-600 cursor-pointer mx-4' />
                                     <div className='w-[1px] h-6 bg-gray-400'></div>
                                     <ShoppingCartIcon sx={{ fontSize: "25px" }} onClick={AddtoCart} className='hover:text-textColor text-gray-600 cursor-pointer mx-4' />
-                                </div>) : null}
+                                </div>) : null} */}
                                 </div>
                             </div>
                         )

@@ -17,10 +17,10 @@ const ShopCards = () => {
     const slice = API.slice(0, data);
 
     const displayMouseOver = () => {
-        setMouseOver(true);
+        // setMouseOver(true);
     }
     const displayMouseOut = () => {
-        setMouseOver(false);
+        // setMouseOver(false);
     }
     const AddLike = () => {
         alert("AddLike");
