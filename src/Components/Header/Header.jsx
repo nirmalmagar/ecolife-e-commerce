@@ -22,8 +22,8 @@ const Header = () => {
                             <option value="$ USD">$ USD</option>
                         </select></li>
                         <li  className='mr-4 hover:text-textColor'><select name="" id="">
-                            <option className='hover:text-textColor' value="America border-none "> 🏳️‍🌈America</option>
-                            <option className='hover:text-textColor' value="Francais">🏳️‍⚧️ Francais</option>
+                            <option className='hover:text-textColor' value="Francais">🏳️‍⚧️ Country Flag</option>
+                            <option className='hover:text-textColor' value="America border-none "> 🏳️‍🌈Country Flag 1</option>
                         </select></li>
                     </ol>
                 </div>

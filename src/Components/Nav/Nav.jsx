@@ -14,10 +14,9 @@ const Nav = () => {
 
   //Mouse down
   const MenuRef = useRef();
-
   useEffect(() => {
     let handler = (e) => {
-      if (!MenuRef.current.contains(e.target)) {
+      if (!MenuRef.current.contains(e.target)) {  //contains means clicking element is not inside
         setMenuIcon(true);
       }
     };
@@ -26,7 +25,7 @@ const Nav = () => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  },[]);
 
   return (
     <>
