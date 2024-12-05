@@ -18,9 +18,9 @@ const Footer = () => {
             <div className='max-w-screen-md lg:mx-auto md:mx-[5%] mx-[3%] text-gray-500 font-robota my-40'>
                 <h1 className='text-center text-4xl font-bold text-black'>Ecolife</h1>
                 <div className='flex justify-between flex-wrap list-none my-16 font-semibold'>
-                    <NavLink to='/' className='xm:mx-0 mx-5 '>NEW PRODUCTS</NavLink>
-                    <NavLink to='/' className='mx-5'>BEST SELLS</NavLink>
-                    <NavLink to='/' className='xm:mx-0 mx-5 '>MY ACCOUNT</NavLink>
+                    <NavLink to='/new-products' className='xm:mx-0 mx-5 '>NEW PRODUCTS</NavLink>
+                    <NavLink to='/best-sells' className='mx-5'>BEST SELLS</NavLink>
+                    <NavLink to='/my-account' className='xm:mx-0 mx-5 '>MY ACCOUNT</NavLink>
                     <NavLink to='/contact-us' className='mx-5' onClick={ScrollUp}>CONTACT US</NavLink>
                     <NavLink to='/about-us' className='xm:mx-0 mx-5 ' onClick={ScrollUp}>ABOUT US</NavLink>
                 </div>

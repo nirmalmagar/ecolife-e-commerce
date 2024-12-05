@@ -18,10 +18,10 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { toast } from 'react-toastify';
 
 const Features = () => {
     const [increaseNum, setIncreaseNum] = useState(1);  //increasing numbers of items button
-    // increasing numbers of items button
     const IncNumItems = () => {
         setIncreaseNum(increaseNum + 1);
     }
@@ -34,10 +34,6 @@ const Features = () => {
         }
     }
 
-    // add to cart alert
-    const addToCart = () => {
-        alert('added successfully');
-    }
     return (
         <div className='font-robota'>
             <div className='h-36 w-screen bg-right bg-cover flex flex-col justify-center items-center' style={{ backgroundImage: `url(${bgImage})` }}>
@@ -102,17 +98,17 @@ const Features = () => {
                                 </div>
                             </div>
                             <div className='w-[50%] sm:block hidden border-black border-2 duration-700 hover:border-none hover:bg-textColor hover:text-white'>
-                                <button onClick={addToCart} className=' py-1 w-[100%] '>Add To Cart</button>
+                                <button onClick={()=>toast("add cart successfully")} className=' py-1 w-[100%] '>Add To Cart</button>
                             </div>
                             <div className='sm:w-[20%] flex pl-6 sm:mx-0 mx-auto'>
-                                <button className='border-y-2 border-l-2 py-1 px-2'><CompareArrowsIcon /></button>
-                                <button className='border-2 py-1 px-2'><FavoriteBorderIcon /></button>
+                                <button onClick={()=>toast("add compare successfully")} className='border-y-2 border-l-2 py-1 px-2'><CompareArrowsIcon /></button>
+                                <button onClick={()=>toast("one like added")} className='border-2 py-1 px-2'><FavoriteBorderIcon /></button>
                             </div>
                         </div>
                         {/* <div className='w-[50%] mx-auto sm:hidden  mt-8 border-black border-2 duration-700 hover:border-none hover:bg-textColor hover:text-white'>
                                 <button onClick={addToCart} className=' py-1 w-[100%] '>Add To Cart</button>
                             </div> */}
-                        <button className='w-full bg-black text-white py-3 mt-8 duration-700 hover:bg-textColor '><ShoppingCartCheckoutIcon className='mr-2' />Buy Now</button>
+                        <button onClick={()=>toast("buy order placed")} className='w-full bg-black text-white py-3 mt-8 duration-700 hover:bg-textColor '><ShoppingCartCheckoutIcon className='mr-2' />Buy Now</button>
                     </div>
                     <hr />
                     <div className='sm:my-5 my-10'>

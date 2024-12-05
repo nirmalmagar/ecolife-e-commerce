@@ -4,6 +4,7 @@ import bgImage from '../../../assets/images/nav/fur-bg-about.jpg';
 import MapIcon from '@mui/icons-material/Map';
 import AddIcCallRoundedIcon from '@mui/icons-material/AddIcCallRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
+import { toast } from 'react-toastify';
 const Contact = () => {
   return (
     <div>
@@ -27,7 +28,7 @@ const Contact = () => {
           </div>
           <div className=' lg:col-span-2 my-5 '>
             <h1 className='font-semibold text-xl lg:text-3xl mb-5'>Contact Us</h1>
-
+          <form onSubmit={()=>toast("form submit successfully")}>
             <div className=' text-base gap grid grid-rows-1'>
               <div className='grid grid-rows-1 '>
                 <div className='grid lg:grid-cols-4'>
@@ -57,7 +58,9 @@ const Contact = () => {
                   <textarea className='max-w-[30rem] md:max-w-96 min-h-24 pl-2 col-span-3 bg-gray-100' placeholder='How can we help you?'></textarea>
                 </div>
               </div>
+            <button type='submit' className="flex items-center justify-center font-semibold bg-textColor rounded-xl px-4 py-1 w-fit text-white">submit</button>
             </div>
+          </form>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { ToastContainer, toast } from "react-toastify";
+import {toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cards = () => {
@@ -24,22 +24,8 @@ const Cards = () => {
   const displayMouseOut = () => {
     setMouseOver(false);
   };
-  const AddLike = () => {
-    toast("AddLike");
-  };
-  const AddSearch = () => {
-    toast("AddSearch");
-  };
-  const AddCompare = () => {
-    toast("AddCompare");
-  };
-  const AddtoCart = () => {
-    toast("AddtoCart");
-  };
   return (
     <div>
-      <ToastContainer />
-
       <div className="text-center mb-[3%]">
         <h1 className="font-robota font-semibold text-lg mb-1">
           FEATURED PRODUCTS
@@ -89,25 +75,25 @@ const Cards = () => {
                   <div className="absolute top-56 py-2 delay-200 left-[9%] drop-shadow-xl border-none bg-white border-2 flex rounded-full ">
                     <FavoriteBorderIcon
                       sx={{ fontSize: "25px" }}
-                      onClick={AddLike}
+                      onClick={()=>toast("Add Like")}
                       className="hover:text-textColor text-gray-600 cursor-pointer mx-4"
                     />
                     <div className="w-[1px] h-6 bg-gray-400"></div>
                     <CompareArrowsIcon
                       sx={{ fontSize: "25px" }}
-                      onClick={AddCompare}
+                      onClick={()=>toast("Add Compare")}
                       className="hover:text-textColor text-gray-600 cursor-pointer mx-4"
                     />
                     <div className="w-[1px] h-6 bg-gray-400"></div>
                     <SearchIcon
                       sx={{ fontSize: "25px" }}
-                      onClick={AddSearch}
+                      onClick={()=>toast("Add Search")}
                       className="hover:text-textColor text-gray-600 cursor-pointer mx-4"
                     />
                     <div className="w-[1px] h-6 bg-gray-400"></div>
                     <ShoppingCartIcon
                       sx={{ fontSize: "25px" }}
-                      onClick={AddtoCart}
+                      onClick={()=>toast("Add toCart")}
                       className="hover:text-textColor text-gray-600 cursor-pointer mx-4"
                     />
                   </div>
