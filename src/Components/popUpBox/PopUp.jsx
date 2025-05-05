@@ -17,7 +17,7 @@ const PopUp = () => {
       <div className=' fixed top-[17%] left-[24%] z-10' >
         <div className=' relative ml-[70%] mb-2'>
           <button onClick={() => setPopup(false)} className="border-2 rounded-[48%] px-3 pb-1 pt-1 text-white border-white">
-           X
+            X
           </button></div>
         <div className='grid grid-cols-2 max-w-[85%]'>
           <div className='bg-white '>
